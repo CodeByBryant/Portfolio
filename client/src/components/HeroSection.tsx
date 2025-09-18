@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
-import heroBackground from "@assets/generated_images/Dark_space_nebula_background_9970b8b1.png"
+import ConstellationBackground from "./ConstellationBackground"
 
 interface HeroSectionProps {
   onNavigate?: (section: string) => void
@@ -12,12 +12,12 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
   const [currentPhrase, setCurrentPhrase] = useState(0)
   const [isTyping, setIsTyping] = useState(true)
   
-  // TODO: Replace with actual user data
   const phrases = [
-    "Full Stack Developer",
-    "UI/UX Designer", 
-    "Space Explorer",
-    "Creative Innovator"
+    "Code...",
+    "Code apps",
+    "Code Simulations",
+    "Code Games",
+    "CodeByBryant"
   ]
 
   useEffect(() => {
@@ -50,45 +50,25 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
 
   return (
     <section 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
       data-testid="hero-section"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${heroBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
     >
-      {/* Animated Stars */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-white rounded-full opacity-70 animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
-            }}
-          />
-        ))}
-      </div>
+      <ConstellationBackground />
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="block text-white">Hello, I'm</span>
-            <span className="bg-gradient-to-r from-primary via-chart-2 to-chart-3 bg-clip-text text-transparent">
-              Alex Chen
+            <span className="text-white">
+              Bryant Ejorh
             </span>
           </h1>
 
           {/* Typing Effect */}
           <div className="text-xl md:text-2xl text-gray-300 mb-8 h-8">
-            <span>{displayText}</span>
-            <span className="inline-block w-0.5 h-6 bg-primary ml-1 animate-pulse" />
+            <span className={currentPhrase === 4 ? "text-white font-semibold" : ""}>{displayText}</span>
+            <span className="inline-block w-0.5 h-6 bg-white ml-1 animate-pulse" />
           </div>
 
           {/* Description */}
@@ -105,7 +85,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 console.log('View Projects clicked')
                 onNavigate?.('projects')
               }}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3"
+              className="bg-white hover:bg-gray-200 text-black px-8 py-3"
               data-testid="button-view-projects"
             >
               <ArrowDown className="w-5 h-5 mr-2" />
@@ -119,7 +99,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 console.log('Contact clicked')
                 onNavigate?.('contact')
               }}
-              className="border-primary text-primary hover:bg-primary/10 px-8 py-3 backdrop-blur-sm"
+              className="border-white text-white hover:bg-white/10 px-8 py-3 backdrop-blur-sm"
               data-testid="button-contact"
             >
               <Mail className="w-5 h-5 mr-2" />
@@ -138,7 +118,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 key={index}
                 size="icon"
                 variant="ghost"
-                className="text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors backdrop-blur-sm"
+                className="text-gray-400 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-sm"
                 onClick={() => console.log(`${social.label} clicked`)}
                 data-testid={`link-${social.label.toLowerCase()}`}
               >
@@ -150,7 +130,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="w-6 h-6 text-primary" />
+          <ArrowDown className="w-6 h-6 text-white" />
         </div>
       </div>
     </section>

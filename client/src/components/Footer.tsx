@@ -28,8 +28,8 @@ export default function Footer() {
             {/* Brand Section */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Rocket className="w-6 h-6 text-primary" />
-                <span className="text-xl font-bold bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
+                <Rocket className="w-6 h-6 text-white" />
+                <span className="text-xl font-bold text-white">
                   Portfolio
                 </span>
               </div>
@@ -43,7 +43,7 @@ export default function Footer() {
                     key={index}
                     size="icon"
                     variant="ghost"
-                    className="text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                    className="text-muted-foreground hover:text-white hover:bg-white/10 transition-colors"
                     onClick={() => console.log(`${social.label} clicked`)}
                     data-testid={`link-footer-${social.label.toLowerCase()}`}
                   >
@@ -61,7 +61,7 @@ export default function Footer() {
                   <Button
                     key={index}
                     variant="ghost"
-                    className="justify-start p-0 h-auto text-muted-foreground hover:text-primary"
+                    className="justify-start p-0 h-auto text-muted-foreground hover:text-white"
                     onClick={() => console.log(`${link.label} clicked`)}
                     data-testid={`link-footer-${link.label.toLowerCase()}`}
                   >
@@ -75,7 +75,7 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Let's Connect</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>📧 alex.chen@example.com</p>
+                <p>📧 bryant.ejorh@example.com</p>
                 <p>📍 San Francisco, CA</p>
                 <p>🚀 Available for new projects</p>
               </div>
@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <div className="flex items-center space-x-1 mb-4 md:mb-0">
-            <span>© {currentYear} Alex Chen. Made with</span>
+            <span>© {currentYear} Bryant Ejorh. Made with</span>
             <Heart className="w-4 h-4 text-red-500 fill-current" />
             <span>and lots of coffee</span>
           </div>
@@ -105,7 +105,7 @@ export default function Footer() {
             <Button
               variant="ghost"
               size="sm"
-              className="p-0 h-auto text-muted-foreground hover:text-primary"
+              className="p-0 h-auto text-muted-foreground hover:text-white"
               onClick={() => console.log('Privacy Policy clicked')}
               data-testid="link-privacy"
             >
@@ -114,7 +114,7 @@ export default function Footer() {
             <Button
               variant="ghost"
               size="sm" 
-              className="p-0 h-auto text-muted-foreground hover:text-primary"
+              className="p-0 h-auto text-muted-foreground hover:text-white"
               onClick={() => console.log('Terms clicked')}
               data-testid="link-terms"
             >

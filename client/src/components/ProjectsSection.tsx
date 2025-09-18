@@ -156,10 +156,8 @@ export default function ProjectsSection() {
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
-              Featured Projects
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             A collection of projects that showcase my skills in full-stack development, 

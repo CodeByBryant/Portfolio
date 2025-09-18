@@ -50,8 +50,8 @@ export default function Navigation({ onNavigate }: NavigationProps) {
             onClick={() => handleNavClick('home')}
             data-testid="button-home"
           >
-            <Rocket className="w-6 h-6 mr-2 text-primary" />
-            <span className="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
+            <Rocket className="w-6 h-6 mr-2 text-white" />
+            <span className="text-white">
               Portfolio
             </span>
           </Button>
@@ -64,7 +64,7 @@ export default function Navigation({ onNavigate }: NavigationProps) {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleNavClick(item.section)}
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground hover:text-white transition-colors"
                 data-testid={`link-${item.section}`}
               >
                 <item.icon className="w-4 h-4 mr-2" />
@@ -93,7 +93,7 @@ export default function Navigation({ onNavigate }: NavigationProps) {
                 <Button
                   key={item.section}
                   variant="ghost"
-                  className="justify-start text-foreground hover:text-primary"
+                  className="justify-start text-foreground hover:text-white"
                   onClick={() => handleNavClick(item.section)}
                   data-testid={`link-mobile-${item.section}`}
                 >

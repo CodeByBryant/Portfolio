@@ -38,10 +38,8 @@ export default function AboutSection() {
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
-              About Me
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A passionate developer who loves turning complex problems into simple, beautiful solutions.
