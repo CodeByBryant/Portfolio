@@ -55,18 +55,45 @@ export default function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    console.log('Contact form submitted:', form)
-    
-    // TODO: Integrate with actual email service
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    toast({
-      title: "Message Sent! 🚀",
-      description: "Thanks for reaching out. I'll get back to you soon!",
-    })
-    
-    setForm({ name: '', email: '', subject: '', message: '' })
-    setIsSubmitting(false)
+    try {
+      // Send contact form data to backend API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form)
+      })
+      
+      const result = await response.json()
+      
+      if (result.success) {
+        toast({
+          title: "Message Sent! 🚀",
+          description: result.message || "Thanks for reaching out. I'll get back to you soon!",
+        })
+        
+        // Clear the form on success
+        setForm({ name: '', email: '', subject: '', message: '' })
+      } else {
+        // Handle validation errors
+        if (result.errors && Array.isArray(result.errors)) {
+          const errorMessage = result.errors.map((err: any) => err.message).join(', ')
+          throw new Error(errorMessage)
+        } else {
+          throw new Error(result.message || 'Failed to send message')
+        }
+      }
+    } catch (error) {
+      console.error('Contact form error:', error)
+      toast({
+        title: "Error Sending Message",
+        description: error instanceof Error ? error.message : "Please try again later or contact me directly via email.",
+        variant: "destructive"
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const isFormValid = form.name && form.email && form.message

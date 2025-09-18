@@ -3,28 +3,49 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react"
+import ProjectModal from "./ProjectModal"
 
-// TODO: Replace with actual project data
+// TODO: Replace with actual project data - move to separate data file
 const projects = [
   {
     id: 1,
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce solution with real-time inventory management, secure payments, and admin dashboard.",
+    longDescription: "A comprehensive e-commerce platform built with modern technologies. Features include user authentication, product catalog, shopping cart, secure checkout with Stripe integration, order management, and an admin dashboard for inventory and sales tracking. The platform handles real-time inventory updates and provides detailed analytics.",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop"
+    ],
     technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true
+    featured: true,
+    category: "Web Application",
+    challenges: ["Real-time inventory synchronization", "Secure payment processing", "Scalable database design"],
+    features: ["User authentication & authorization", "Real-time inventory management", "Secure payment processing", "Order tracking system", "Admin dashboard with analytics"],
+    timeline: "4 months",
+    role: "Full Stack Developer"
   },
   {
     id: 2,
     title: "Task Management App",
     description: "Collaborative project management tool with real-time updates, team collaboration, and advanced analytics.",
+    longDescription: "A powerful project management application that enables teams to collaborate effectively. Built with real-time synchronization, the app allows multiple users to work on projects simultaneously with instant updates. Features advanced analytics, customizable workflows, and integrations with popular development tools.",
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop"
+    ],
     technologies: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true
+    featured: true,
+    category: "Web Application",
+    challenges: ["Real-time collaboration", "Complex state management", "Performance optimization"],
+    features: ["Real-time collaboration", "Kanban boards", "Time tracking", "Team analytics", "Custom workflows"],
+    timeline: "5 months",
+    role: "Lead Developer"
   },
   {
     id: 3,
