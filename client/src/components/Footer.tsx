@@ -1,19 +1,20 @@
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Github, Linkedin, Mail, Twitter, Heart, Rocket } from "lucide-react"
+import { Link } from "wouter"
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Mail, href: "#", label: "Email" }
+  { icon: Github, href: "https://github.com", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: Mail, href: "mailto:bryant.ejorh@example.com", label: "Email" }
 ]
 
 const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-  { label: "Resume", href: "#resume" }
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/" }
 ]
 
 export default function Footer() {
@@ -44,10 +45,12 @@ export default function Footer() {
                     size="icon"
                     variant="ghost"
                     className="text-muted-foreground hover:text-white hover:bg-white/10 transition-colors"
-                    onClick={() => console.log(`${social.label} clicked`)}
+                    asChild
                     data-testid={`link-footer-${social.label.toLowerCase()}`}
                   >
-                    <social.icon className="w-4 h-4" />
+                    <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+                      <social.icon className="w-4 h-4" />
+                    </a>
                   </Button>
                 ))}
               </div>
@@ -62,10 +65,12 @@ export default function Footer() {
                     key={index}
                     variant="ghost"
                     className="justify-start p-0 h-auto text-muted-foreground hover:text-white"
-                    onClick={() => console.log(`${link.label} clicked`)}
+                    asChild
                     data-testid={`link-footer-${link.label.toLowerCase()}`}
                   >
-                    {link.label}
+                    <Link href={link.href}>
+                      {link.label}
+                    </Link>
                   </Button>
                 ))}
               </nav>
@@ -81,11 +86,13 @@ export default function Footer() {
               </div>
               <Button
                 className="mt-4"
-                onClick={() => console.log('Get in touch clicked')}
+                asChild
                 data-testid="button-footer-contact"
               >
-                <Mail className="w-4 h-4 mr-2" />
-                Get In Touch
+                <Link href="/contact">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Get In Touch
+                </Link>
               </Button>
             </div>
           </div>
@@ -106,20 +113,13 @@ export default function Footer() {
               variant="ghost"
               size="sm"
               className="p-0 h-auto text-muted-foreground hover:text-white"
-              onClick={() => console.log('Privacy Policy clicked')}
-              data-testid="link-privacy"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              data-testid="button-back-to-top"
             >
-              Privacy Policy
+              Back to Top
             </Button>
-            <Button
-              variant="ghost"
-              size="sm" 
-              className="p-0 h-auto text-muted-foreground hover:text-white"
-              onClick={() => console.log('Terms clicked')}
-              data-testid="link-terms"
-            >
-              Terms of Service
-            </Button>
+            <span className="text-muted-foreground">•</span>
+            <span className="text-muted-foreground">Built with React & TypeScript</span>
           </div>
         </div>
       </div>

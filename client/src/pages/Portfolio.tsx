@@ -5,6 +5,9 @@ import AboutSection from "@/components/AboutSection"
 import ProjectsSection from "@/components/ProjectsSection"
 import ContactSection from "@/components/ContactSection"
 import Footer from "@/components/Footer"
+import AnimatedBackground from "@/components/AnimatedBackground"
+import ScrollIndicator from "@/components/ScrollIndicator"
+import FloatingActionButton from "@/components/FloatingActionButton"
 
 export default function Portfolio() {
   const sectionsRef = {
@@ -26,26 +29,33 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground" data-testid="portfolio-app">
-      <Navigation onNavigate={scrollToSection} />
+    <div className="min-h-screen bg-background text-foreground relative" data-testid="portfolio-app">
+      <AnimatedBackground />
+      <ScrollIndicator />
       
-      <div ref={sectionsRef.home}>
-        <HeroSection onNavigate={scrollToSection} />
+      <div className="relative z-10">
+        <Navigation onNavigate={scrollToSection} />
+        
+        <div ref={sectionsRef.home} className="transform transition-all duration-700 ease-out">
+          <HeroSection onNavigate={scrollToSection} />
+        </div>
+        
+        <div ref={sectionsRef.about} className="transform transition-all duration-700 ease-out">
+          <AboutSection />
+        </div>
+        
+        <div ref={sectionsRef.projects} className="transform transition-all duration-700 ease-out">
+          <ProjectsSection />
+        </div>
+        
+        <div ref={sectionsRef.contact} className="transform transition-all duration-700 ease-out">
+          <ContactSection />
+        </div>
+        
+        <Footer />
       </div>
       
-      <div ref={sectionsRef.about}>
-        <AboutSection />
-      </div>
-      
-      <div ref={sectionsRef.projects}>
-        <ProjectsSection />
-      </div>
-      
-      <div ref={sectionsRef.contact}>
-        <ContactSection />
-      </div>
-      
-      <Footer />
+      <FloatingActionButton />
     </div>
   )
 }
