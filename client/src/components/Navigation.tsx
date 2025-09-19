@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link, useLocation } from "wouter"
+import { Link } from "wouter"
 import { Button } from "@/components/ui/button"
 import { Rocket, User, Briefcase, Mail, Menu, X } from "lucide-react"
 
@@ -42,32 +42,37 @@ export default function Navigation({ onNavigate }: NavigationProps) {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" data-testid="button-home">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-xl font-bold p-0 hover:bg-transparent"
-            >
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-xl font-bold p-0 hover:bg-transparent"
+            asChild
+            data-testid="button-home"
+          >
+            <Link href="/">
               <Rocket className="w-6 h-6 mr-2 text-white" />
               <span className="text-white">
                 Portfolio
               </span>
-            </Button>
-          </Link>
+            </Link>
+          </Button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link key={item.section} href={item.path} data-testid={`link-${item.section}`}>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-foreground hover:text-white transition-colors"
-                >
+              <Button
+                key={item.section}
+                variant="ghost"
+                size="sm"
+                className="text-foreground hover:text-white transition-colors"
+                asChild
+                data-testid={`link-${item.section}`}
+              >
+                <Link href={item.path}>
                   <item.icon className="w-4 h-4 mr-2" />
                   {item.label}
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             ))}
           </div>
 
@@ -88,20 +93,18 @@ export default function Navigation({ onNavigate }: NavigationProps) {
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <div className="flex flex-col space-y-2 pt-4">
               {navItems.map((item) => (
-                <Link 
-                  key={item.section} 
-                  href={item.path} 
+                <Button
+                  key={item.section}
+                  variant="ghost"
+                  className="justify-start text-foreground hover:text-white w-full"
+                  asChild
                   data-testid={`link-mobile-${item.section}`}
-                  onClick={handleMobileMenuClose}
                 >
-                  <Button
-                    variant="ghost"
-                    className="justify-start text-foreground hover:text-white w-full"
-                  >
+                  <Link href={item.path} onClick={handleMobileMenuClose}>
                     <item.icon className="w-4 h-4 mr-2" />
                     {item.label}
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               ))}
             </div>
           </div>
