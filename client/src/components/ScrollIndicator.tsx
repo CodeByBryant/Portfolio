@@ -28,15 +28,7 @@ export default function ScrollIndicator() {
         />
       </div>
 
-      {/* Floating Scroll Indicator */}
-      {scrollProgress < 5 && (
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-40">
-          <div className="flex flex-col items-center text-white/70">
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <ChevronDown className="w-6 h-6" />
-          </div>
-        </div>
-      )}
+
     </>
   )
 }

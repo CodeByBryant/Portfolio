@@ -7,7 +7,7 @@ import ContactSection from "@/components/ContactSection"
 import Footer from "@/components/Footer"
 import AnimatedBackground from "@/components/AnimatedBackground"
 import ScrollIndicator from "@/components/ScrollIndicator"
-import FloatingActionButton from "@/components/FloatingActionButton"
+
 
 export default function Portfolio() {
   const sectionsRef = {
@@ -55,7 +55,6 @@ export default function Portfolio() {
         <Footer />
       </div>
       
-      <FloatingActionButton />
     </div>
   )
 }
