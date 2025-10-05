@@ -44,56 +44,33 @@ export default function ContactSection() {
     subject: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleInputChange = (field: keyof ContactForm, value: string) => {
     setForm(prev => ({ ...prev, [field]: value }))
     console.log(`Form updated: ${field} = ${value}`)
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     
-    try {
-      // Send contact form data to backend API
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(form)
-      })
-      
-      const result = await response.json()
-      
-      if (result.success) {
-        toast({
-          title: "Message Sent! 🚀",
-          description: result.message || "Thanks for reaching out. I'll get back to you soon!",
-        })
-        
-        // Clear the form on success
-        setForm({ name: '', email: '', subject: '', message: '' })
-      } else {
-        // Handle validation errors
-        if (result.errors && Array.isArray(result.errors)) {
-          const errorMessage = result.errors.map((err: any) => err.message).join(', ')
-          throw new Error(errorMessage)
-        } else {
-          throw new Error(result.message || 'Failed to send message')
-        }
-      }
-    } catch (error) {
-      console.error('Contact form error:', error)
-      toast({
-        title: "Error Sending Message",
-        description: error instanceof Error ? error.message : "Please try again later or contact me directly via email.",
-        variant: "destructive"
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
+    const emailAddress = "alex.chen@example.com"
+    const subject = form.subject || "Contact from Portfolio Website"
+    const body = `Name: ${form.name}
+Email: ${form.email}
+
+Message:
+${form.message}`
+    
+    const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    
+    window.location.href = mailtoLink
+    
+    toast({
+      title: "Opening Email Client",
+      description: "Your default email app will open with a pre-filled message.",
+    })
+    
+    setForm({ name: '', email: '', subject: '', message: '' })
   }
 
   const isFormValid = form.name && form.email && form.message
@@ -176,21 +153,12 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   size="lg"
-                  disabled={!isFormValid || isSubmitting}
+                  disabled={!isFormValid}
                   className="w-full"
                   data-testid="button-submit-contact"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-primary-foreground/20 border-t-primary-foreground rounded-full animate-spin mr-2" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4 mr-2" />
-                      Send Message
-                    </>
-                  )}
+                  <Send className="w-4 h-4 mr-2" />
+                  Send Message
                 </Button>
               </form>
             </CardContent>
