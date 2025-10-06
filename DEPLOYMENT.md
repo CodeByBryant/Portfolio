@@ -34,10 +34,20 @@ To build the site locally:
 
 ```bash
 npm install
-npm run build
+npx vite build
 ```
 
 The built files will be in the `dist/public` directory.
+
+**Note**: The `package.json` scripts still reference the old backend setup. To run the development server locally, use:
+```bash
+npx vite
+```
+
+And to build:
+```bash
+npx vite build
+```
 
 ## Customization
 
