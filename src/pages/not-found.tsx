@@ -7,18 +7,23 @@ import Footer from "@/components/Footer";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-background text-foreground" data-testid="not-found-page">
+    <div
+      className="min-h-screen bg-background text-foreground flex flex-col"
+      data-testid="not-found-page"
+    >
       <Navigation />
-      <div className="flex-1 flex items-center justify-center px-6 pt-20">
+      <div className="flex-1 flex items-center justify-center px-6 py-20">
         <Card className="w-full max-w-lg mx-4">
           <CardContent className="pt-8 pb-8 text-center">
             <div className="flex justify-center mb-6">
               <AlertCircle className="h-16 w-16 text-destructive" />
             </div>
-            
+
             <h1 className="text-4xl font-bold mb-4">404</h1>
-            <h2 className="text-xl font-semibold mb-4 text-foreground">Page Not Found</h2>
-            
+            <h2 className="text-xl font-semibold mb-4 text-foreground">
+              Page Not Found
+            </h2>
+
             <p className="text-muted-foreground mb-8">
               The page you're looking for doesn't exist or has been moved.
             </p>

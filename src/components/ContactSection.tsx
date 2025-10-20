@@ -19,19 +19,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "alex.chen@example.com", // TODO: Replace with actual email
-    href: "mailto:alex.chen@example.com"
+    value: "codebybryant@example.com", // TODO: Replace with actual email
+    href: "mailto:codebybryant@example.com"
   },
   {
     icon: Phone,
-    label: "Phone",
-    value: "+1 (555) 123-4567", // TODO: Replace with actual phone
-    href: "tel:+15551234567"
+    label: "",
+    value: "", // TODO: Replace with actual phone
+    href: ""
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA", // TODO: Replace with actual location
+    value: "Bay Area, CA", // TODO: Replace with actual location
     href: "#"
   }
 ]
@@ -53,7 +53,7 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
-    const emailAddress = "alex.chen@example.com"
+    const emailAddress = "codebybryant@gmail.com"
     const subject = form.subject || "Contact from Portfolio Website"
     const body = `Name: ${form.name}
 Email: ${form.email}
