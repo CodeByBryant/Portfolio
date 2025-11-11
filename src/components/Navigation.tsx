@@ -49,7 +49,7 @@ export default function Navigation({ onNavigate }: NavigationProps) {
             asChild
             data-testid="button-home"
           >
-            <Link href="/">
+            <Link href={import.meta.env.BASE_URL}>
               <Rocket className="w-6 h-6 mr-2 text-white" />
               <span className="text-white">
                 Portfolio
