@@ -19,19 +19,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "codebybryant@example.com", // TODO: Replace with actual email
-    href: "mailto:codebybryant@example.com"
+    value: "codebybryant@gmail.com", // TODO: Replace with actual email
+    href: "mailto:codebybryant@gmail.com"
   },
-  {
+ /* {
     icon: Phone,
     label: "",
     value: "", // TODO: Replace with actual phone
     href: ""
-  },
+  },*/
   {
     icon: MapPin,
     label: "Location",
-    value: "Bay Area, CA", // TODO: Replace with actual location
+    value: "California, US", // TODO: Replace with actual location
     href: "#"
   }
 ]

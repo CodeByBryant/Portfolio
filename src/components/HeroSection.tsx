@@ -13,11 +13,11 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
   const [isTyping, setIsTyping] = useState(true)
   
   const phrases = [
-    "Code...",
-    "Code apps",
-    "Code Simulations",
-    "Code Games",
-    "CodeByBryant"
+    "High School Developer",
+    "App Development",
+    "Automations",
+    "Simulations",
+    "Turning Ideas Into Reality Through Code"
   ]
 
   useEffect(() => {
