@@ -4,9 +4,8 @@ import { Github, Linkedin, Mail, Twitter, Heart, Rocket } from "lucide-react"
 import { Link } from "wouter"
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: Github, href: "https://github.com/CodeByBryant", label: "GitHub" },
+ /* TODO: Make Linkedin lol { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" }, */
   { icon: Mail, href: "mailto:bryant.ejorh@example.com", label: "Email" }
 ]
 
@@ -80,8 +79,8 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Let's Connect</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>📧 bryant.ejorh@example.com</p>
-                <p>📍 San Francisco, CA</p>
+                <p>📧 codebybryant@gmail.com</p>
+                <p>📍 California, US</p>
                 <p>🚀 Available for new projects</p>
               </div>
               <Button
