@@ -4,7 +4,7 @@ import typography from "@tailwindcss/typography";
 
 export default {
   darkMode: ["class"],
-  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       borderRadius: {
@@ -103,7 +103,6 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
       },
     },
-    plugins: [tailwindcssAnimate, typography],
-    content: [],
-  } satisfies Config,
-};
+  },
+  plugins: [tailwindcssAnimate, typography],
+} satisfies Config;

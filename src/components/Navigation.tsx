@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from "react"
-import { Link } from "wouter"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Rocket, User, Briefcase, Mail, Menu, X } from "lucide-react"
 
@@ -49,10 +51,10 @@ export default function Navigation({ onNavigate }: NavigationProps) {
             asChild
             data-testid="button-home"
           >
-            <Link href={import.meta.env.BASE_URL}>
+            <Link href="/">
               <Rocket className="w-6 h-6 mr-2 text-white" />
               <span className="text-white">
-                Portfolio
+                Bryant Ejorh
               </span>
             </Link>
           </Button>

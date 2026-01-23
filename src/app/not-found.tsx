@@ -1,7 +1,9 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Home, ArrowLeft } from "lucide-react";
-import { Link } from "wouter";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -25,7 +27,7 @@ export default function NotFound() {
             </h2>
 
             <p className="text-muted-foreground mb-8">
-              The page you're looking for doesn't exist or has been moved.
+              The page you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
