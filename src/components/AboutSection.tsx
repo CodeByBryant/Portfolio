@@ -35,10 +35,10 @@ const projects = [
     link: "https://github.com/CodeByBryant/EvoSquares/",
   },
   {
-    title: "Xenith Showcase",
+    title: "Evo",
     description:
-      "A showcase platform demonstrating creative development and design skills",
-    link: "https://github.com/CodeByBryant/Xenith-Showcase/",
+      "An advanced neural network-based evolutionary sandbox where AI agents evolve through natural selection",
+    link: "https://github.com/CodeByBryant/Evo/",
   },
 ];
 

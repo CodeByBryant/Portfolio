@@ -48,10 +48,10 @@ An innovative simulation exploring evolutionary algorithms through visual repres
 
 **Tech:** Python • Pygame • Genetic Algorithms • Simulation
 
-### 🌟 Xenith Showcase
-A creative platform demonstrating modern web development capabilities with interactive 3D elements and cutting-edge design.
+### 🧠 Evo
+An advanced neural network-based evolutionary sandbox where AI agents evolve through natural selection. Watch species emerge, compete for resources, and evolve complex behaviors in real-time!
 
-**Tech:** React • TypeScript • Tailwind CSS • Three.js
+**Tech:** TypeScript • React • Electron • Neural Networks • Genetic Algorithms
 
 ---
 

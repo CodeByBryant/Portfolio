@@ -47,30 +47,34 @@ export const projects: Project[] = [
     role: "Developer",
   },
   {
-    id: "xenith-showcase",
-    title: "Xenith Showcase",
+    id: "evo",
+    title: "Evo",
     description:
-      "A showcase platform demonstrating creative development and design skills.",
-    longDescription: `Xenith Showcase is a platform that highlights various development and design capabilities. 
-    It serves as a demonstration of modern web technologies and creative programming concepts.`,
+      "An advanced neural network-based evolutionary sandbox where AI agents evolve through natural selection.",
+    longDescription: `Evo is an advanced neural network-based evolutionary sandbox where AI agents evolve through natural selection. 
+    Agents navigate an infinite 2D world, sense their environment using raycasting, and make decisions through neural networks that evolve over generations. 
+    Watch species emerge, compete for resources, and evolve complex behaviors in real-time!`,
     image:
-      "https://raw.githubusercontent.com/CodeByBryant/Xenith-Showcase/main/preview.png", // You'll need to update this with actual image URL
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Three.js"],
-    githubUrl: "https://github.com/CodeByBryant/Xenith-Showcase",
+      "https://raw.githubusercontent.com/CodeByBryant/Evo/main/docs/preview.png",
+    technologies: ["TypeScript", "React", "Electron", "Neural Networks", "Genetic Algorithms"],
+    githubUrl: "https://github.com/CodeByBryant/Evo",
+    liveUrl: "https://codebybryant.github.io/Evo/",
     featured: true,
-    category: "Web Development",
+    category: "Simulation",
     challenges: [
-      "Implementing responsive 3D graphics",
-      "Optimizing performance",
-      "Creating intuitive user interactions",
+      "Implementing efficient neural networks for real-time evolution",
+      "Creating an infinite scrollable 2D world",
+      "Optimizing performance for 100+ agents at 60 FPS",
+      "Designing intuitive species tracking and visualization",
     ],
     features: [
-      "Interactive 3D elements",
-      "Responsive design",
-      "Modern UI/UX",
-      "Performance optimized animations",
+      "Full genetic algorithm with reproduction, crossover, and mutation",
+      "Multi-layer perceptron neural networks",
+      "Infinite scrollable map with camera controls",
+      "Real-time evolution charts and statistics",
+      "Automatic species identification with color coding",
     ],
-    role: "Full Stack Developer",
+    role: "Developer",
   },
 ];
 
