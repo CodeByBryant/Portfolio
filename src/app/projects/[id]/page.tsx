@@ -8,6 +8,10 @@ import { projects, getProjectById } from "@/lib/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
+
 // Generate static params for all projects
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -16,8 +20,9 @@ export function generateStaticParams() {
 }
 
 // Generate metadata for each project page
-export function generateMetadata({ params }: { params: { id: string } }): Metadata {
-  const project = getProjectById(params.id);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = getProjectById(id);
   
   if (!project) {
     return {
@@ -36,8 +41,9 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   };
 }
 
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const project = getProjectById(params.id);
+export default async function ProjectDetailPage({ params }: PageProps) {
+  const { id } = await params;
+  const project = getProjectById(id);
 
   if (!project) {
     notFound();

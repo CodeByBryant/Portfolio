@@ -29,12 +29,6 @@ const skills = [
 
 const projects = [
   {
-    title: "EvoSquares",
-    description:
-      "A simulation project exploring evolutionary algorithms through visual representation",
-    link: "https://github.com/CodeByBryant/EvoSquares/",
-  },
-  {
     title: "Evo",
     description:
       "An advanced neural network-based evolutionary sandbox where AI agents evolve through natural selection",

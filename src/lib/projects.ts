@@ -18,33 +18,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "evosquares",
-    title: "EvoSquares",
-    description:
-      "A simulation project exploring evolutionary algorithms through visual representation.",
-    longDescription: `EvoSquares is an innovative project that demonstrates the power of evolutionary algorithms 
-    through an engaging visual interface. The project simulates how digital entities evolve and adapt over time, 
-    providing insights into artificial life and genetic algorithms.`,
-    image:
-      "https://raw.githubusercontent.com/CodeByBryant/EvoSquares/main/preview.png", // You'll need to update this with actual image URL
-    technologies: ["Python", "Pygame", "Genetic Algorithms", "Simulation"],
-    githubUrl: "https://github.com/CodeByBryant/EvoSquares",
-    featured: true,
-    category: "Simulation",
-    challenges: [
-      "Implementing efficient genetic algorithms",
-      "Creating smooth visual representations",
-      "Optimizing performance for complex simulations",
-    ],
-    features: [
-      "Real-time evolution simulation",
-      "Visual representation of genetic algorithms",
-      "Interactive parameters adjustment",
-      "Performance optimization",
-    ],
-    role: "Developer",
-  },
-  {
     id: "evo",
     title: "Evo",
     description:
@@ -53,7 +26,7 @@ export const projects: Project[] = [
     Agents navigate an infinite 2D world, sense their environment using raycasting, and make decisions through neural networks that evolve over generations. 
     Watch species emerge, compete for resources, and evolve complex behaviors in real-time!`,
     image:
-      "https://raw.githubusercontent.com/CodeByBryant/Evo/main/docs/preview.png",
+      "https://raw.githubusercontent.com/CodeByBryant/Evo/main/public/assets/web-app-manifest-512x512.png",
     technologies: ["TypeScript", "React", "Electron", "Neural Networks", "Genetic Algorithms"],
     githubUrl: "https://github.com/CodeByBryant/Evo",
     liveUrl: "https://codebybryant.github.io/Evo/",
