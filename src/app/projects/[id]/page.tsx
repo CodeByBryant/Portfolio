@@ -1,43 +1,58 @@
-import { useEffect } from "react";
-import { useRoute } from "wouter";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, ArrowLeft } from "lucide-react";
-import { getProjectById } from "@/lib/projects";
-import { Link } from "wouter";
+import { ExternalLink, Github } from "lucide-react";
+import { projects, getProjectById } from "@/lib/projects";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
-export default function ProjectPage() {
-  const [, params] = useRoute("/projects/:id");
-  const project = params ? getProjectById(params.id) : null;
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+// Generate static params for all projects
+export function generateStaticParams() {
+  return projects.map((project) => ({
+    id: project.id,
+  }));
+}
+
+// Generate metadata for each project page
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = getProjectById(id);
+  
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      images: [project.image],
+    },
+  };
+}
+
+export default async function ProjectDetailPage({ params }: PageProps) {
+  const { id } = await params;
+  const project = getProjectById(id);
 
   if (!project) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <Card>
-          <CardContent className="p-6">
-            <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
-            <p className="text-muted-foreground mb-4">
-              The project you're looking for doesn't exist.
-            </p>
-            <Button asChild>
-              <Link href="/projects">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Projects
-              </Link>
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    );
+    notFound();
   }
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
+      
       {/* Hero Section */}
       <div className="relative h-[40vh] md:h-[60vh] overflow-hidden">
         <img
@@ -181,6 +196,8 @@ export default function ProjectPage() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

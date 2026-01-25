@@ -29,16 +29,10 @@ const skills = [
 
 const projects = [
   {
-    title: "EvoSquares",
+    title: "Evo",
     description:
-      "A simulation project exploring evolutionary algorithms through visual representation",
-    link: "https://github.com/CodeByBryant/EvoSquares/",
-  },
-  {
-    title: "Xenith Showcase",
-    description:
-      "A showcase platform demonstrating creative development and design skills",
-    link: "https://github.com/CodeByBryant/Xenith-Showcase/",
+      "An advanced neural network-based evolutionary sandbox where AI agents evolve through natural selection",
+    link: "https://github.com/CodeByBryant/Evo/",
   },
 ];
 

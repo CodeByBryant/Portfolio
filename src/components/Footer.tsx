@@ -1,7 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Github, Linkedin, Mail, Twitter, Heart, Rocket } from "lucide-react"
-import { Link } from "wouter"
+import Link from "next/link"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/CodeByBryant", label: "GitHub" },
@@ -30,12 +32,12 @@ export default function Footer() {
               <div className="flex items-center space-x-2">
                 <Rocket className="w-6 h-6 text-white" />
                 <span className="text-xl font-bold text-white">
-                  Portfolio
+                  Bryant Ejorh
                 </span>
               </div>
               <p className="text-muted-foreground max-w-xs">
                 Crafting digital experiences that bridge imagination and reality. 
-                Let's build something amazing together.
+                Let&apos;s build something amazing together.
               </p>
               <div className="flex space-x-2">
                 {socialLinks.map((social, index) => (
@@ -77,7 +79,7 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Let's Connect</h3>
+              <h3 className="text-lg font-semibold">Let&apos;s Connect</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <p>📧 codebybryant@gmail.com</p>
                 <p>📍 California, US</p>
@@ -118,7 +120,7 @@ export default function Footer() {
               Back to Top
             </Button>
             <span className="text-muted-foreground">•</span>
-            <span className="text-muted-foreground">Built with React & TypeScript</span>
+            <span className="text-muted-foreground">Built with Next.js & TypeScript</span>
           </div>
         </div>
       </div>

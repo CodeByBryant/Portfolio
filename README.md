@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🚀 CodeByBryant's Portfolio
+# 🚀 Bryant Ejorh's Project Showcase
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://codebybryant.github.io/CodeByBryant/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://codebybryant.github.io/Portfolio/)
 [![GitHub Stars](https://img.shields.io/github/stars/CodeByBryant/Portfolio?style=for-the-badge)](https://github.com/CodeByBryant/Portfolio/stargazers)
 [![License](https://img.shields.io/github/license/CodeByBryant/Portfolio?style=for-the-badge)](LICENSE)
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Live-success?style=flat-square)
 ![Build](https://img.shields.io/badge/Build-Passing-success?style=flat-square)
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-success?style=flat-square)
 
@@ -14,28 +14,26 @@
 
 ---
 
-## 👨‍💻 About This Portfolio
+## 👨‍💻 About This Project Showcase
 
-This is my personal portfolio website showcasing my journey as a **high school developer** passionate about turning innovative ideas into reality through code. The site features interactive animations, smooth transitions, and a modern design that reflects my development philosophy.
+A modern project showcase website highlighting my journey as a **high school developer** passionate about turning innovative ideas into reality through code. Built with Next.js for optimal SEO and performance.
 
 ## 🛠️ Tech Stack
 
 ### Core Technologies
+![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5.4.19-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
 ### Styling & UI
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.18-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Radix UI](https://img.shields.io/badge/Radix_UI-Latest-161618?style=for-the-badge&logo=radix-ui&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.13.1-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-### Tools & Libraries
-- **Wouter** - Lightweight routing
-- **React Query** - Data fetching & state management
-- **Lucide React** - Beautiful icons
-- **React Hook Form** - Form handling
-- **Zod** - Schema validation
+### SEO & Performance
+- **Next.js App Router** - Server-side rendering & static generation
+- **Optimized Metadata** - OpenGraph, Twitter Cards, JSON-LD
+- **Static Export** - Fast loading via GitHub Pages
 
 ---
 
@@ -48,10 +46,10 @@ An innovative simulation exploring evolutionary algorithms through visual repres
 
 **Tech:** Python • Pygame • Genetic Algorithms • Simulation
 
-### 🌟 Xenith Showcase
-A creative platform demonstrating modern web development capabilities with interactive 3D elements and cutting-edge design.
+### 🧠 Evo
+An advanced neural network-based evolutionary sandbox where AI agents evolve through natural selection. Watch species emerge, compete for resources, and evolve complex behaviors in real-time!
 
-**Tech:** React • TypeScript • Tailwind CSS • Three.js
+**Tech:** TypeScript • React • Electron • Neural Networks • Genetic Algorithms
 
 ---
 
@@ -78,30 +76,35 @@ A creative platform demonstrating modern web development capabilities with inter
 
 ```
 Portfolio/
+├── 📂 app/                      # Next.js App Router pages
+│   ├── 📄 layout.tsx            # Root layout with SEO metadata
+│   ├── 📄 page.tsx              # Home page
+│   ├── 📂 about/                # About page
+│   ├── 📂 projects/             # Projects pages
+│   └── 📂 contact/              # Contact page
 ├── 📂 src/
 │   ├── 📂 components/
-│   │   ├── 📂 ui/              # Reusable UI components (40+ components)
+│   │   ├── 📂 ui/               # Reusable UI components (40+ components)
 │   │   ├── 🎨 HeroSection.tsx   # Animated hero with typing effect
 │   │   ├── 💼 ProjectsSection.tsx
 │   │   ├── 👤 AboutSection.tsx
 │   │   ├── 📧 ContactSection.tsx
 │   │   └── 🌌 ConstellationBackground.tsx
-│   ├── 📂 pages/               # Route pages
-│   ├── 📂 hooks/               # Custom React hooks
-│   ├── 📂 lib/                 # Utilities & configurations
-│   └── 📂 assets/              # Static assets
-├── 📂 public/                  # Public files
-└── ⚙️ vite.config.ts           # Vite configuration
+│   ├── 📂 hooks/                # Custom React hooks
+│   └── 📂 lib/                  # Utilities & configurations
+├── 📂 public/                   # Public files
+└── ⚙️ next.config.ts            # Next.js configuration
 ```
 
 ## 🎨 Design Philosophy
 
 > "Creating innovative solutions that push the boundaries of what's possible"
 
-This portfolio embodies my approach to development:
+This project showcase embodies my approach to development:
 - **Clean Code** - Maintainable and well-structured
 - **User-Centric** - Focused on great user experience
 - **Modern Stack** - Using cutting-edge technologies
+- **SEO Optimized** - Built with Next.js for discoverability
 - **Performance First** - Optimized for speed
 - **Accessible** - Inclusive design for all users
 
