@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -7,9 +5,10 @@ import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import ScrollIndicator from "@/components/ScrollIndicator";
 
-export default function HomePage() {
+export default function Portfolio() {
   const sectionsRef = {
     home: useRef<HTMLDivElement>(null),
     about: useRef<HTMLDivElement>(null),
@@ -20,7 +19,7 @@ export default function HomePage() {
   const scrollToSection = (section: string) => {
     const sectionRef = sectionsRef[section as keyof typeof sectionsRef];
     if (sectionRef?.current) {
-      const offsetTop = sectionRef.current.offsetTop - 80;
+      const offsetTop = sectionRef.current.offsetTop - 80; // Account for fixed nav
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
@@ -31,7 +30,7 @@ export default function HomePage() {
   return (
     <div
       className="min-h-screen bg-background text-foreground relative"
-      data-testid="showcase-app"
+      data-testid="portfolio-app"
     >
       <ScrollIndicator />
 
