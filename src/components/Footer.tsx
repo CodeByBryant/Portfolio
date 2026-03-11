@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { Github, Linkedin, Mail, Twitter, Heart, Rocket } from "lucide-react"
+import { Github, Linkedin, Mail, Heart, Rocket, ExternalLink } from "lucide-react"
 import { Link } from "wouter"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/CodeByBryant", label: "GitHub" },
- { icon: Linkedin, href: "https://linkedin.com/in/bryant-ejorh-b0995a3b2", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:codebybryant@gmail.com", label: "Email" }
+  { icon: Linkedin, href: "https://linkedin.com/in/bryant-ejorh-b0995a3b2", label: "LinkedIn" },
+  { icon: ExternalLink, href: "https://peerlist.io/bryantec35", label: "Peerlist" },
+  { icon: Mail, href: "mailto:codebybryant@gmail.com", label: "Email" },
 ]
 
 const quickLinks = [

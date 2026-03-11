@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from "lucide-react"
 import ConstellationBackground from "./ConstellationBackground"
 
 interface HeroSectionProps {
@@ -110,6 +110,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             {[
               { icon: Github, href: "https://github.com/CodeByBryant", label: "GitHub" },
               { icon: Linkedin, href: "https://linkedin.com/in/bryant-ejorh-b0995a3b2", label: "LinkedIn" },
+              { icon: ExternalLink, href: "https://peerlist.io/bryantec35", label: "Peerlist" },
               { icon: Mail, href: "mailto:codebybryant@gmail.com", label: "Email" }
             ].map((social, index) => (
               <Button
