@@ -3,12 +3,18 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
-import { useLocation } from "wouter"
 import { projects } from "@/lib/projects";
+import ProjectModal from "@/components/ProjectModal";
 
-const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
-  const router = useLocation();
+type Project = (typeof projects)[0];
 
+const ProjectCard = ({
+  project,
+  onView,
+}: {
+  project: Project;
+  onView: (project: Project) => void;
+}) => {
   return (
     <Card className="group hover-elevate transition-all duration-300 overflow-hidden">
       <div className="relative overflow-hidden">
@@ -26,7 +32,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
               size="sm"
               variant="outline"
               className="bg-background/20 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
-              onClick={() => router.push(`/projects/${project.id}`)}
+              onClick={() => onView(project)}
               data-testid={`button-view-project-${project.id}`}
             >
               <ExternalLink className="w-4 h-4 mr-2" />
@@ -37,7 +43,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
                 size="sm"
                 variant="outline"
                 className="bg-background/20 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
-                onClick={() => window.open(project.githubUrl, "_blank")}
+                onClick={() => window.open(project.githubUrl, "_blank", "noopener,noreferrer")}
                 data-testid={`button-github-${project.id}`}
               >
                 <Github className="w-4 h-4" />
@@ -79,6 +85,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
 export default function ProjectsSection() {
   const [filter, setFilter] = useState<"all" | "featured">("all");
   const [currentPage, setCurrentPage] = useState(0);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const projectsPerPage = 6;
 
   const filteredProjects =
@@ -131,7 +138,11 @@ export default function ProjectsSection() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {currentProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onView={setSelectedProject}
+            />
           ))}
         </div>
 
@@ -166,6 +177,12 @@ export default function ProjectsSection() {
           </div>
         )}
       </div>
+
+      <ProjectModal
+        project={selectedProject}
+        isOpen={selectedProject !== null}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }

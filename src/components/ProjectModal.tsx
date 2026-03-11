@@ -3,26 +3,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { ExternalLink, Github, X, ChevronLeft, ChevronRight } from "lucide-react"
-
-// Project data structure - you can move this to a separate file later
-interface Project {
-  id: number
-  title: string
-  description: string
-  longDescription: string // Full project description
-  image: string
-  images: string[] // Multiple project images
-  technologies: string[]
-  liveUrl: string
-  githubUrl: string
-  featured: boolean
-  category: string // e.g., "Web App", "Mobile App", "API"
-  challenges: string[] // Technical challenges solved
-  features: string[] // Key features
-  timeline: string // e.g., "3 months"
-  role: string // e.g., "Full Stack Developer"
-}
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react"
+import type { Project } from "@/lib/projects"
 
 interface ProjectModalProps {
   project: Project | null
@@ -35,12 +17,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
   if (!project) return null
 
+  const images = project.images?.length ? project.images : [project.image]
+
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length)
+    setCurrentImageIndex((prev) => (prev + 1) % images.length)
   }
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length)
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
   const handleLinkClick = (url: string, type: 'live' | 'github') => {
@@ -62,13 +46,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           <div className="relative">
             <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
               <img
-                src={project.images[currentImageIndex] || project.image}
+                src={images[currentImageIndex]}
                 alt={`${project.title} - Image ${currentImageIndex + 1}`}
                 className="w-full h-full object-cover"
               />
               
               {/* Image Navigation */}
-              {project.images.length > 1 && (
+              {images.length > 1 && (
                 <>
                   <Button
                     size="icon"
@@ -91,7 +75,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   
                   {/* Image Indicators */}
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                    {project.images.map((_, index) => (
+                    {images.map((_, index) => (
                       <button
                         key={index}
                         className={`w-2 h-2 rounded-full transition-colors ${
@@ -154,14 +138,16 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             <div className="space-y-4">
               {/* Action Buttons */}
               <div className="flex flex-col space-y-2">
-                <Button
-                  onClick={() => handleLinkClick(project.liveUrl, 'live')}
-                  className="w-full bg-white hover:bg-gray-200 text-black"
-                  data-testid="button-view-live"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  View Live Site
-                </Button>
+                {project.liveUrl && (
+                  <Button
+                    onClick={() => handleLinkClick(project.liveUrl!, 'live')}
+                    className="w-full bg-white hover:bg-gray-200 text-black"
+                    data-testid="button-view-live"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Live Site
+                  </Button>
+                )}
                 <Button
                   variant="outline"
                   onClick={() => handleLinkClick(project.githubUrl, 'github')}
@@ -182,15 +168,19 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   <Badge variant="secondary">{project.category}</Badge>
                 </div>
 
-                <div>
-                  <h4 className="text-sm font-semibold text-white mb-1">Timeline</h4>
-                  <p className="text-sm text-muted-foreground">{project.timeline}</p>
-                </div>
+                {project.timeline && (
+                  <div>
+                    <h4 className="text-sm font-semibold text-white mb-1">Timeline</h4>
+                    <p className="text-sm text-muted-foreground">{project.timeline}</p>
+                  </div>
+                )}
 
-                <div>
-                  <h4 className="text-sm font-semibold text-white mb-1">Role</h4>
-                  <p className="text-sm text-muted-foreground">{project.role}</p>
-                </div>
+                {project.role && (
+                  <div>
+                    <h4 className="text-sm font-semibold text-white mb-1">Role</h4>
+                    <p className="text-sm text-muted-foreground">{project.role}</p>
+                  </div>
+                )}
 
                 {project.featured && (
                   <div>
