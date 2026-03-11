@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { useToast } from "@/hooks/use-toast"
-import { Mail, MapPin, Phone, Send, MessageSquare, Calendar } from "lucide-react"
+import { Mail, MapPin, Phone, Send, MessageSquare, Calendar, Download } from "lucide-react"
 
 interface ContactForm {
   name: string
@@ -223,7 +223,11 @@ ${form.message}`
               <Button
                 variant="outline"
                 className="h-auto p-4 flex-col space-y-2"
-                onClick={() => console.log('Schedule call clicked')}
+                onClick={() => {
+                  const subject = encodeURIComponent("Let's Schedule a Call")
+                  const body = encodeURIComponent("Hi Bryant,\n\nI'd love to schedule a call to discuss a potential project or opportunity.\n\nPlease let me know your availability!\n\nThanks,\n[Your Name]")
+                  window.location.href = `mailto:codebybryant@gmail.com?subject=${subject}&body=${body}`
+                }}
                 data-testid="button-schedule-call"
               >
                 <Calendar className="w-5 h-5" />
@@ -232,10 +236,13 @@ ${form.message}`
               <Button
                 variant="outline"
                 className="h-auto p-4 flex-col space-y-2"
-                onClick={() => console.log('Download resume clicked')}
+                onClick={() => {
+                  // Replace the URL below with a direct PDF link once uploaded (e.g. "/resume.pdf")
+                  window.open("https://linkedin.com/in/bryant-ejorh-b0995a3b2", "_blank", "noopener,noreferrer")
+                }}
                 data-testid="button-download-resume"
               >
-                <Send className="w-5 h-5" />
+                <Download className="w-5 h-5" />
                 <span className="text-sm">Download Resume</span>
               </Button>
             </div>
