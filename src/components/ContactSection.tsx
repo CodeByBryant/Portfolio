@@ -47,7 +47,6 @@ export default function ContactSection() {
 
   const handleInputChange = (field: keyof ContactForm, value: string) => {
     setForm(prev => ({ ...prev, [field]: value }))
-    console.log(`Form updated: ${field} = ${value}`)
   }
 
   const handleSubmit = (e: React.FormEvent) => {

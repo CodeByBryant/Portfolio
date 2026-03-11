@@ -82,7 +82,6 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             <Button
               size="lg"
               onClick={() => {
-                console.log('View Projects clicked')
                 onNavigate?.('projects')
               }}
               className="bg-white hover:bg-gray-200 text-black px-8 py-3"
@@ -96,7 +95,6 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               size="lg"
               variant="outline"
               onClick={() => {
-                console.log('Contact clicked')
                 onNavigate?.('contact')
               }}
               className="border-white text-white hover:bg-white/10 px-8 py-3 backdrop-blur-sm"
@@ -119,7 +117,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 size="icon"
                 variant="ghost"
                 className="text-gray-400 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-sm"
-                onClick={() => console.log(`${social.label} clicked`)}
+                onClick={() => window.open(social.href, '_blank', 'noopener,noreferrer')}
                 data-testid={`link-${social.label.toLowerCase()}`}
               >
                 <social.icon className="w-5 h-5" />

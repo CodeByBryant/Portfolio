@@ -110,7 +110,6 @@ export default function ProjectsSection() {
               onClick={() => {
                 setFilter("all");
                 setCurrentPage(0);
-                console.log("Showing all projects");
               }}
               data-testid="button-filter-all"
             >
@@ -121,7 +120,6 @@ export default function ProjectsSection() {
               onClick={() => {
                 setFilter("featured");
                 setCurrentPage(0);
-                console.log("Showing featured projects");
               }}
               data-testid="button-filter-featured"
             >
