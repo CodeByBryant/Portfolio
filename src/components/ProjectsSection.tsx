@@ -1,15 +1,13 @@
-"use client";
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useLocation } from "wouter"
 import { projects } from "@/lib/projects";
 
 const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
-  const router = useRouter();
+  const router = useLocation();
 
   return (
     <Card className="group hover-elevate transition-all duration-300 overflow-hidden">

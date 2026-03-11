@@ -46,7 +46,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   const handleLinkClick = (url: string, type: 'live' | 'github') => {
     console.log(`Opening ${type} URL: ${url}`)
     // TODO: Replace with actual navigation
-    // window.open(url, '_blank')
+    window.open(url, '_blank')
   }
 
   return (

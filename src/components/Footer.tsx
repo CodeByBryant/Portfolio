@@ -1,14 +1,12 @@
-"use client";
-
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Github, Linkedin, Mail, Twitter, Heart, Rocket } from "lucide-react"
-import Link from "next/link"
+import { Link } from "wouter"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/CodeByBryant", label: "GitHub" },
- /* TODO: Make Linkedin lol { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" }, */
-  { icon: Mail, href: "mailto:bryant.ejorh@example.com", label: "Email" }
+ { icon: Linkedin, href: "https://linkedin.com/in/bryant-ejorh-b0995a3b2", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:codebybryant@gmail.com", label: "Email" }
 ]
 
 const quickLinks = [
@@ -120,7 +118,7 @@ export default function Footer() {
               Back to Top
             </Button>
             <span className="text-muted-foreground">•</span>
-            <span className="text-muted-foreground">Built with Next.js & TypeScript</span>
+            <span className="text-muted-foreground">Built with React.js & TypeScript</span>
           </div>
         </div>
       </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
@@ -112,9 +110,9 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* Social Links */}
           <div className="flex justify-center space-x-6">
             {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Mail, href: "#", label: "Email" }
+              { icon: Github, href: "https://github.com/CodeByBryant", label: "GitHub" },
+              { icon: Linkedin, href: "https://linkedin.com/in/bryant-ejorh-b0995a3b2", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:codebybryant@gmail.com", label: "Email" }
             ].map((social, index) => (
               <Button
                 key={index}
