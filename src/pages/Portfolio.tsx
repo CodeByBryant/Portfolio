@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -31,6 +32,13 @@ export default function Portfolio() {
       className="min-h-screen bg-background text-foreground relative"
       data-testid="portfolio-app"
     >
+      <Helmet>
+        <title>Bryant Ejorh | CodeByBryant Portfolio</title>
+        <meta name="description" content="Bryant Ejorh's portfolio — High School developer building web apps, simulations, and games with React, TypeScript, and more." />
+        <meta property="og:title" content="Bryant Ejorh | CodeByBryant Portfolio" />
+        <meta property="og:description" content="Bryant Ejorh's portfolio — High School developer building web apps, simulations, and games." />
+        <link rel="canonical" href="https://codebybryant.github.io/Portfolio/" />
+      </Helmet>
       <ScrollIndicator />
 
       <div className="relative z-10">
