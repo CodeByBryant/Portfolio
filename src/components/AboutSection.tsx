@@ -77,7 +77,7 @@ export default function AboutSection() {
                 </p>
                 <p className="text-muted-foreground">
                   When I'm not coding, I'm exploring new technologies, working
-                  on personal projects like EvoSquares, or improving my 3D
+                  on personal projects like Evo and Sovereign, or improving my 3D
                   modeling skills in Blender. I believe in continuous learning
                   and am always eager to take on new challenges that push my
                   boundaries.
@@ -155,33 +155,6 @@ export default function AboutSection() {
                       </Badge>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Featured Projects */}
-        <div>
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Featured Projects
-          </h3>
-          <div className="space-y-6">
-            {projects.map((project, index) => (
-              <Card key={index} className="hover-elevate">
-                <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h4 className="text-xl font-semibold">{project.title}</h4>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline self-start md:self-center mt-1 md:mt-0"
-                    >
-                      View Project →
-                    </a>
-                  </div>
-                  <p className="text-muted-foreground">{project.description}</p>
                 </CardContent>
               </Card>
             ))}
