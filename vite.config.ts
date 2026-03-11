@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: process.env.GITHUB_PAGES ? "/Portfolio/" : "/",
+  base: "/Portfolio/",
   server: {
     host: "0.0.0.0",
     port: 5000,
